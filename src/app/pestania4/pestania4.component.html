@@ -1,0 +1,65 @@
+
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+crossorigin="anonymous"
+>
+
+<!--  AREA FUENTES-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Rubik:ital,wght@1,300&display=swap" rel="stylesheet">
+
+<h1>DATOS VENTAS</h1>
+<div class="container ">
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">CODIGO MEDICAMENTO</th>
+      <th scope="col">NOMBRE</th>
+      <th scope="col">CANTIDAD</th>
+      <th scope="col">PRECIO</th>
+      <th></th>
+
+    </tr>
+  </thead>
+  <tbody *ngFor="let dat of datosv ">
+    <th   scope="row" name="cod"  >{{dat.codigom}}</th>
+    <th  >{{dat.namem}}</th>
+    <th  >{{dat.cantidad}}</th>
+    <th  >{{dat.preciov}}</th>
+
+  </tbody>
+</table>
+</div>
+<br>
+<br>
+<br>
+<h1>DATOS CLIENTES</h1>
+<div class="container">
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">CI</th>
+      <th scope="col">NOMBRE</th>
+      <th scope="col">DIRECCION</th>
+      <th scope="col">TELÉFONO</th>
+      <th></th>
+
+    </tr>
+  </thead>
+  <tbody *ngFor="let dat of datosc ">
+    <th   scope="row" name="cod"  >{{dat.ci}}</th>
+    <th  >{{dat.name}}</th>
+    <th  >{{dat.direction}}</th>
+    <th  >{{dat.cellphone}}</th>
+
+  </tbody>
+</table>
+</div>

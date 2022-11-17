@@ -1,0 +1,82 @@
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+crossorigin="anonymous"
+>
+<!--  AREA FUENTES-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Rubik:ital,wght@1,300&display=swap" rel="stylesheet">
+
+<h1>REGISTO DE VENTAS</h1>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">CODIGO</th>
+      <th scope="col">NOMBRE</th>
+      <th scope="col">CANTIDAD</th>
+      <th scope="col">PRECIO</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let dat of datost ">
+    <th   scope="row" name="cod"  >{{dat.id}}</th>
+    <th  >{{dat.name}}</th>
+    <th  >{{dat.cant}}</th>
+    <th  >{{dat.price}}</th>
+    <th><button type="button" (click) = "eliminar(dat)" class="btn btn-danger">ELIMINAR</button></th>
+    <th><button type="button" (click)="seleccion(dat)"  class="btn btn-warning">EDITAR</button></th>
+  </tbody>
+</table>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h1>AGREGAR MEDICAMENTO</h1>
+      <form>
+      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">CODIGO</label>
+      <input type="text" id=" codigo-store"  [(ngModel)]="nucodigo" class="form-control" name="cod" >
+
+      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">MEDICAMENTO</label>
+    <input type="text" id=" codigo-store"  [(ngModel)]="nunombre" class="form-control" name="med" >
+
+    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">CANTIDAD</label>
+    <input type="text" id=" codigo-store"  [(ngModel)]="nucant" class="form-control" name="ncant" >
+
+    <label class="my-1 mr-2" for="inlineFormCustomSelectPref"> PRECIO</label>
+    <input type="text" id=" codigo-store"  [(ngModel)]="nuprecio" class="form-control" name="precio" >
+    <br><br>
+    <div id="centro">
+    <button type="button" (click) = "agregar()" class="btn btn-success">AGREGAR</button>
+  </div>
+  </form>
+    </div>
+    <div class="col-6" *ngIf="n>0">
+      <h1>ACTUALIZAR MEDICAMENTO</h1>
+      <form>
+      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">CODIGO</label>
+      <input type="text" id=" codigo-store"  value="{{codigo}}" class="form-control" readonly >
+
+      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">MEDICAMENTO</label>
+    <input type="text" id=" codigo-store"  value="{{name}}" class="form-control" readonly >
+
+    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">NUEVA CANTIDAD</label>
+    <input type="text" id=" codigo-store"  [(ngModel)]="ncant" class="form-control" name="ncant" >
+
+    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">NUEVO PRECIO</label>
+    <input type="text" id=" codigo-store"  [(ngModel)]="nprecio" class="form-control" name="precio" >
+    <br><br>
+      <div id="centro">
+    <button type="button" (click) = "actualizar()" class="btn btn-success">ACTUALIZAR</button>
+  </div>
+  </form>
+    </div>
+
+  </div>
+
+</div>
